@@ -16,4 +16,11 @@ public class AlunosDTO {
 
     public AlunosDTO(){
     }
+
+    public AlunosDTO(AlunosDTO alunos) {
+        this.id = alunos.getId();
+        this.nome = alunos.getNome();
+        this.email = alunos.getTelefone();
+        this.telefone = alunos.getTelefone();
+    }
 }
