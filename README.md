@@ -120,12 +120,6 @@ http://localhost:8082
 Após iniciar o projeto, acesse:
 
 ```text
-http://localhost:8082/swagger-ui/index.html
-```
-
-Ou diretamente:
-
-```text
 http://localhost:8082/swagger-ui/index.html#/
 ```
 
