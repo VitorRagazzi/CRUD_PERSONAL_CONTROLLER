@@ -41,5 +41,5 @@ Model: Representa as entidades do sistema.
 
 ## ⚙️ Como Executar
 Pré-requisitos:
-Java 17
-Maven
+- Java 17
+- Maven
