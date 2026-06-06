@@ -36,28 +36,36 @@ API REST desenvolvida em Java com Spring Boot para gerenciamento de alunos atrav
 src/main/java/br/com/crud/personalcontroller
 │
 ├── config
-│   └── SQLiteDialect
+│   └── SQLiteDialect.java
 │
 ├── controller
-│   ├── AgendamentoController
-│   └── AlunosController
+│   ├── AgendamentoController.java
+│   └── AlunosController.java
 │
 ├── database
 │   ├── model
+│   │   ├── Agendamento.java
+│   │   └── Aluno.java
+│   │
 │   └── repository
+│       ├── AgendamentoRepository.java
+│       └── AlunosRepository.java
+│
+├── service
+│   ├── AgendamentoService.java
+│   ├── AlunosService.java
+│   │
+│   └── serviceImpl
+│       ├── AgendamentoServiceImpl.java
+│       └── AlunosServiceImpl.java
 │
 ├── exception
 │
 ├── handler
 │
-├── service
-│   ├── AgendamentoService
-│   ├── AlunosService
-│   └── serviceImpl
-│
 ├── utils
 │
-└── PersonalcontrollerApplication
+└── PersonalcontrollerApplication.java
 ```
 
 ## Arquitetura MVC
