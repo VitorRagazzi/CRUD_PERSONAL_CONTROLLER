@@ -1,49 +1,47 @@
 package br.com.crud.personalcontroller.controller;
 
+import br.com.crud.personalcontroller.database.model.Alunos;
+import br.com.crud.personalcontroller.database.model.dto.AlunosDTO;
+import br.com.crud.personalcontroller.service.AlunosService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/alunos")
 
 public class AlunosController {
-    private final AlunoService alunoService;
+    private final AlunosService alunosService;
 
-    public AlunosController(AlunoService alunoService) {
-        this.alunoService = alunoService;
+    public AlunosController(AlunosService alunosService) {
+        this.alunosService = alunosService;
     }
 
-    // Listar todos os alunos
     @GetMapping
-    public ResponseEntity<List<Aluno>> listarTodos() {
-        return ResponseEntity.ok(alunoService.listarTodos());
+    public ResponseEntity<List<AlunosDTO>> listarAlunos() {
+        return ResponseEntity.ok(alunosService.listarAlunos());
     }
 
-    // Buscar aluno por ID
     @GetMapping("/{id}")
-    public ResponseEntity<Aluno> buscarPorId(@PathVariable Long id) {
-        return ResponseEntity.ok(alunoService.buscarPorId(id));
+    public ResponseEntity<AlunosDTO> buscarAlunoPorId(@PathVariable Integer id) {
+        return ResponseEntity.ok(alunosService.buscarAlunoPorId(id));
     }
 
-    // Cadastrar aluno
     @PostMapping
-    public ResponseEntity<Aluno> cadastrar(@RequestBody Aluno aluno) {
-        return ResponseEntity.ok(alunoService.salvar(aluno));
+    public ResponseEntity<AlunosDTO> criarAluno(@RequestBody AlunosDTO dto) {
+        return ResponseEntity.ok(alunosService.criarAluno(dto));
     }
 
-    // Atualizar aluno
     @PutMapping("/{id}")
-    public ResponseEntity<Aluno> atualizar(
-            @PathVariable Long id,
-            @RequestBody Aluno aluno) {
-
-        return ResponseEntity.ok(alunoService.atualizar(id, aluno));
+    public ResponseEntity<AlunosDTO> atualizarAluno(@PathVariable Integer id,
+            @RequestBody AlunosDTO dto) {
+        return ResponseEntity.ok(alunosService.atualizarAluno(id, dto));
     }
 
-    // Excluir aluno
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> excluir(@PathVariable Long id) {
-        alunoService.excluir(id);
+    public ResponseEntity<Void> deletarAluno(@PathVariable Integer id) {
+        alunosService.deletarAluno(id);
         return ResponseEntity.noContent().build();
     }
-
 }

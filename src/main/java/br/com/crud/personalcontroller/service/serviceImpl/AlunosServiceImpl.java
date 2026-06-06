@@ -8,6 +8,8 @@ import br.com.crud.personalcontroller.service.AlunosService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AlunosServiceImpl implements AlunosService {
@@ -20,10 +22,10 @@ public class AlunosServiceImpl implements AlunosService {
         Alunos alunos = new Alunos(
             dto.getNome(),
             dto.getEmail(),
-            dto.getTelefone(),
+            dto.getTelefone()
         );
 
-        alunos = AlunosRepository.save(alunos);
+        alunos = repository.save(alunos);
 
         return converterParaDTO(alunos);
     }
@@ -31,29 +33,39 @@ public class AlunosServiceImpl implements AlunosService {
     @Override
     public AlunosDTO buscarAlunoPorId(Integer id) {
 
-        Alunos alunos = AlunosRepository.findById(id)
+        Alunos alunos = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
         return converterParaDTO(alunos);
     }
 
     @Override
+    public List<AlunosDTO> listarAlunos() {
+
+        List<Alunos> alunos = repository.findAll();
+
+        return alunos.stream()
+                .map(this::converterParaDTO)
+                .toList();
+    }
+
+    @Override
     public AlunosDTO atualizarAluno(Integer id, AlunosDTO dto) {
 
-        Alunos alunos = AlunosRepository.findById(id)
+        Alunos alunos = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
 
         alunos.setNome(dto.getNome());
         alunos.setEmail(dto.getEmail());
         alunos.setTelefone(dto.getTelefone());
 
-        alunos = AlunosRepository.save(alunos);
+        alunos = repository.save(alunos);
 
         return converterParaDTO(alunos);
     }
 
     @Override
     public void deletarAluno(Integer id) {
-        AlunosRepository.deleteById(id);
+        repository.deleteById(id);
     }
 
     private AlunosDTO converterParaDTO(Alunos alunos) {
