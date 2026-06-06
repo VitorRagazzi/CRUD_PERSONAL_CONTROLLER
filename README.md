@@ -1,6 +1,6 @@
 # 📋 Personal Controller
 
-API REST desenvolvida em Java com Spring Boot para gerenciamento de dados pessoais através das operações básicas de CRUD (Create, Read, Update e Delete).
+API REST desenvolvida em Java com Spring Boot para gerenciamento de alunos através das operações básicas de CRUD (Create, Read, Update e Delete).
 
 ## 🚀 Tecnologias Utilizadas
 
