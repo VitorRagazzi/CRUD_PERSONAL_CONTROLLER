@@ -153,8 +153,6 @@ Este projeto foi desenvolvido para praticar:
 - Documentação com Swagger/OpenAPI
 - Boas práticas de desenvolvimento backend
 
-## 📄 Licença
-
 ---
 
 Projeto desenvolvido para fins de estudo e aprimoramento de conhecimentos em Java e Spring Boot.
