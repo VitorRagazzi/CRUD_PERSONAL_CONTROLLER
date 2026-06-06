@@ -33,11 +33,11 @@ src
 └── dto
 
 ```
-## Arquitetura
-Controller: Recebe as requisições HTTP.
-Service: Contém as regras de negócio.
-Repository: Responsável pelo acesso aos dados.
-Model: Representa as entidades do sistema.
+## Arquitetura MVC
+- Controller: Recebe as requisições HTTP.
+- Service: Contém as regras de negócio.
+- Repository: Responsável pelo acesso aos dados.
+- Model: Representa as entidades do sistema.
 
 ## ⚙️ Como Executar
 Pré-requisitos:
