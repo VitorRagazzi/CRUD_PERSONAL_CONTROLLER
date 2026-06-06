@@ -45,12 +45,13 @@ src/main/java/br/com/crud/personalcontroller
 ├── database
 │   │
 │   ├── model
+│   │   │
+│   │   ├── dto
+│   │   │   ├── AgendamentoDTO.java
+│   │   │   └── AlunosDTO.java
+│   │   │
 │   │   ├── Agendamento.java
 │   │   └── Alunos.java
-│   │
-│   ├── dto
-│   │   ├── AgendamentoDTO.java
-│   │   └── AlunosDTO.java
 │   │
 │   └── repository
 │       ├── AgendamentoRepository.java
@@ -65,9 +66,7 @@ src/main/java/br/com/crud/personalcontroller
 │       └── AlunosServiceImpl.java
 │
 ├── exception
-│
 ├── handler
-│
 ├── utils
 │
 └── PersonalcontrollerApplication.java
