@@ -31,3 +31,15 @@ src
 ├── repository
 ├── model
 └── dto
+
+```
+## Arquitetura
+Controller: Recebe as requisições HTTP.
+Service: Contém as regras de negócio.
+Repository: Responsável pelo acesso aos dados.
+Model: Representa as entidades do sistema.
+
+## ⚙️ Como Executar
+Pré-requisitos:
+Java 17
+Maven
