@@ -19,10 +19,10 @@ public class Alunos {
     @Column(name = "NOME", nullable = false)
     private String nome;
 
-    @Column(name = "EMAIL")
+    @Column(name = "EMAIL", unique = true)
     private String email;
 
-    @Column(name = "TELEFONE")
+    @Column(name = "TELEFONE", unique = true)
     private String telefone;
 
     public Alunos (String nome, String email, String telefone) {

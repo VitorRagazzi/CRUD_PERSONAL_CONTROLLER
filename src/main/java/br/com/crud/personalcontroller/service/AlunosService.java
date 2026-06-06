@@ -10,6 +10,4 @@ public interface AlunosService {
     List<AlunosDTO> listarAlunos();
     AlunosDTO atualizarAluno(Integer id, AlunosDTO dto);
     void deletarAluno(Integer id);
-
-
 }

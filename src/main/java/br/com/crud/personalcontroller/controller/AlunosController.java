@@ -3,6 +3,7 @@ package br.com.crud.personalcontroller.controller;
 import br.com.crud.personalcontroller.database.model.Alunos;
 import br.com.crud.personalcontroller.database.model.dto.AlunosDTO;
 import br.com.crud.personalcontroller.service.AlunosService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,7 @@ public class AlunosController {
 
     @PostMapping
     public ResponseEntity<AlunosDTO> criarAluno(@RequestBody AlunosDTO dto) {
-        return ResponseEntity.ok(alunosService.criarAluno(dto));
+        return ResponseEntity.status(201).body(alunosService.criarAluno(dto));
     }
 
     @PutMapping("/{id}")
