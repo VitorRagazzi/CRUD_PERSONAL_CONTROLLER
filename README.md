@@ -43,9 +43,14 @@ src/main/java/br/com/crud/personalcontroller
 │   └── AlunosController.java
 │
 ├── database
+│   │
 │   ├── model
 │   │   ├── Agendamento.java
-│   │   └── Aluno.java
+│   │   └── Alunos.java
+│   │
+│   ├── dto
+│   │   ├── AgendamentoDTO.java
+│   │   └── AlunosDTO.java
 │   │
 │   └── repository
 │       ├── AgendamentoRepository.java
