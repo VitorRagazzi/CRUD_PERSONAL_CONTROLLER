@@ -91,29 +91,10 @@ src/main/java/br/com/crud/personalcontroller
 
 ## ⚙️ Como Executar
 
-### Clone o projeto
+### Pré-requisitos
 
-```bash
-git clone https://github.com/VitorRagazzi/CRUD_PERSONAL_CONTROLLER.git
-```
-
-### Entre na pasta
-
-```bash
-cd CRUD_PERSONAL_CONTROLLER
-```
-
-### Execute a aplicação
-
-```bash
-mvn spring-boot:run
-```
-
-A aplicação será iniciada em:
-
-```text
-http://localhost:8082
-```
+- Java 17+ (ou versão utilizada no projeto)
+- Maven
 
 ## 📖 Documentação da API
 
