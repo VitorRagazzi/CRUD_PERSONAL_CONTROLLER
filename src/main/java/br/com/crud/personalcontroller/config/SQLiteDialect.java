@@ -1,18 +1,32 @@
 package br.com.crud.personalcontroller.config;
 
 import org.hibernate.dialect.Dialect;
-import org.hibernate.dialect.pagination.LimitLimitHandler;
-import org.hibernate.dialect.pagination.LimitHandler;
-import org.hibernate.engine.jdbc.dialect.spi.DialectResolutionInfo;
+import org.hibernate.dialect.identity.IdentityColumnSupport;
+import org.hibernate.dialect.identity.IdentityColumnSupportImpl;
 
 public class SQLiteDialect extends Dialect {
 
-    public SQLiteDialect(DialectResolutionInfo info) {
-        super(info);
+    public SQLiteDialect() {
+        super();
     }
 
     @Override
-    public LimitHandler getLimitHandler() {
-        return LimitLimitHandler.INSTANCE;
+    public IdentityColumnSupport getIdentityColumnSupport() {
+        return new IdentityColumnSupportImpl() {
+            @Override
+            public boolean supportsIdentityColumns() {
+                return true;
+            }
+
+            @Override
+            public String getIdentitySelectString(String table, String column, int type) {
+                return "select last_insert_rowid()";
+            }
+
+            @Override
+            public String getIdentityColumnString(int type) {
+                return "integer primary key autoincrement";
+            }
+        };
     }
 }
